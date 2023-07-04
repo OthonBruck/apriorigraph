@@ -28,9 +28,9 @@ resultadoDataFrame = pd.DataFrame(inspecionar(results), columns = ['Sintoma pres
 
 print(results)
 
-# writer = pd.ExcelWriter("ansiedade.xlsx", engine="xlsxwriter")
+writer = pd.ExcelWriter("ansiedade.xlsx", engine="xlsxwriter")
 
-# resultsinDataFrame.to_excel(writer, sheet_name="Sheet3", startrow=0, header=resultsinDataFrame.columns, index=False)
-# writer.close()
+resultadoDataFrame.to_excel(writer, sheet_name="Sheet3", startrow=0, header=resultadoDataFrame.columns, index=False)
+writer.close()
 
 print(resultadoDataFrame.nlargest(n=10, columns="Lift"))
